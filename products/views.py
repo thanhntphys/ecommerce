@@ -5,6 +5,6 @@ from .serializers import ProductsSerializers
 # Create your views here.
 
 
-class ProductsListAPIView(generics.ListAPIView):
+class ProductsListAPIView(generics.ListCreateAPIView):
     queryset = Products.objects.all()
     serializer_class = ProductsSerializers

@@ -5,6 +5,11 @@ from .serializers import ProductsSerializers
 # Create your views here.
 
 
-class ProductsListAPIView(generics.ListCreateAPIView):
+class ProductsListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializers
+
+
+class ProductsRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Products.objects.all()
     serializer_class = ProductsSerializers
